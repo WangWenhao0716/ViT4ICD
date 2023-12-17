@@ -17,6 +17,8 @@ Please install the packages according to the ``environment.yaml`` file in this d
 
 ## Train
 
+0. Please download the pre-trained model from [here](https://dl.fbaipublicfiles.com/barlowtwins/ep1000_bs2048_lrw0.2_lrb0.0048_lambd0.0051/resnet50.pth), and save as ``logs/pretrained/resnet50_bar.pth`` in ``Stage 1``.
+
 1. Please go to ``Stage 1``, and running
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos_ema.py \
