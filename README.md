@@ -87,7 +87,7 @@ torch.save(mod['state_dict'], 'logs/train_v1_s3_all_bw/vit_two_losses_com_L2_nor
 We will get ```stage_3.pth.tar```.
 
 ## Test
-
+Please go to the ``extract_features`` folder.
 1. Extract reference feature:
 ```
 mkdir ./feature/vit_stage3
@@ -135,6 +135,15 @@ and then
 python compute_metrics.py \
 --preds_filepath ./feature/vit_stage3/predictions_v1_after.csv \
 --gt_filepath dev_ground_truth_after.csv
+```
+This should give
+```
+Track 1 results of 259570 predictions (5008 GT matches)
+Average Precision: 0.78596
+Recall at P90    : 0.73602
+Threshold at P90 : -0.114972
+Recall at rank 1:  0.82488
+Recall at rank 10: 0.84265
 ```
 
 ## Citation
