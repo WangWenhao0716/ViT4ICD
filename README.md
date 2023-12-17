@@ -88,6 +88,54 @@ We will get ```stage_3.pth.tar```.
 
 ## Test
 
+1. Extract reference feature:
+```
+mkdir ./feature/vit_stage3
+CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
+      --image_dir /path/to/reference_images/ \
+      --o ./feature/vit_stage3/reference_v1.hdf5 \
+      --model vit_base  --GeM_p 3 --bw \
+      --checkpoint stage_3.pth.tar --imsize 224
+```
+2. Extract training feature:
+```
+CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
+      --image_dir /path/to/training_images/ \
+      --o ./feature/vit_stage3/training_v1.hdf5 \
+      --model vit_base  --GeM_p 3 --bw \
+      --checkpoint stage_3.pth.tar --imsize 224 
+```
+3. Extract query features:
+```
+CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
+      --image_dir /path/to/queries/ \
+      --o ./feature/vit_stage3/query_v1.hdf5 \
+      --model vit_base  --GeM_p 3 --bw \
+      --checkpoint stage_3.pth.tar --imsize 224
+```
+4. Score normalization:
+```
+CUDA_VISIBLE_DEVICES=0 python score_normalization.py \
+    --query_descs ./feature/vit_stage3/query_0_v1.hdf5\
+    --db_descs ./feature/vit_stage3/reference_{0..19}_v1.hdf5 \
+    --train_descs ./feature/vit_stage3/training_{0..19}_v1.hdf5 \
+    --factor 2 --n 10 \
+    --o ./feature/vit_stage3/predictions_v1.csv \
+    --reduction avg --max_results 500000
+```
+5. Get the final predictions:
+```
+import pandas as pd
+df = pd.read_csv('./feature/vit_stage3/predictions_v1.csv')
+df_1 = df[df['query_id']>'Q25000']
+df_1.to_csv('./feature/vit_stage3/predictions_v1_after.csv', index=None)
+```
+and then
+```
+python compute_metrics.py \
+--preds_filepath ./feature/vit_stage3/predictions_v1_after.csv \
+--gt_filepath dev_ground_truth_after.csv
+```
 
 ## Citation
 ```
