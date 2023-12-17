@@ -87,10 +87,9 @@ torch.save(mod['state_dict'], 'logs/train_v1_s3_all_bw/vit_two_losses_com_L2_nor
 We will get ```stage_3.pth.tar```.
 
 ## Test
-Please go to the ``extract_features`` folder.
+Please go to the ``extract_features`` folder, and make directory ``mkdir ./feature/vit_stage3``.
 1. Extract reference feature:
 ```
-mkdir ./feature/vit_stage3
 CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
       --image_dir /path/to/reference_images/ \
       --o ./feature/vit_stage3/reference_v1.hdf5 \
