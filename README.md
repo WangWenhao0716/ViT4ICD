@@ -34,6 +34,7 @@ import torch
 mod = torch.load('logs/train_v1_s3_all_bw/50UN_two_losses_m0.6/checkpoint_24_ema.pth.tar',map_location='cpu')
 torch.save(mod['state_dict'], 'logs/train_v1_s3_all_bw/50UN_two_losses_m0.6/stage_1.pth.tar')
 ```
+We will get ```stage_1.pth.tar```. Please move it to ``Stage 23/``.
 
 2. Please go to ``Stage 23``, and running
 ```
