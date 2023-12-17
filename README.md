@@ -41,6 +41,15 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos
 --height 224 --width 224 \
 --resume logs/train_v1_s3_all_bw/vit_two_losses_com_L2_norm_100_all_same_forimage/checkpoint_24_ema.pth.tar
 ```
+
+By running:
+```
+import torch
+mod = torch.load('logs/train_v1_s3_all_bw/vit_two_losses_com_L2_norm_100_all_same_tune_forimage/checkpoint_9_ema.pth.tar',map_location='cpu')
+torch.save(mod['state_dict'], 'logs/train_v1_s3_all_bw/vit_two_losses_com_L2_norm_100_all_same_tune_forimage/stage_2.pth.tar')
+```
+We will get ```stage_2.pth.tar```.
+
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos_ema_com_tune_bw_gt_ng_forimage.py \
 -ds train_v1_s3_all -a vit_base --margin 0.0 \
@@ -51,6 +60,15 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos
 --height 224 --width 224 \
 --resume logs/train_v1_s3_all_bw/vit_two_losses_com_L2_norm_100_all_same_tune_forimage/checkpoint_9_ema.pth.tar
 ```
+
+By running:
+```
+import torch
+mod = torch.load('logs/train_v1_s3_all_bw/vit_two_losses_com_L2_norm_100_all_tune_bw_gt_ng_1_forimage/checkpoint_9_ema.pth.tar',map_location='cpu')
+torch.save(mod['state_dict'], 'logs/train_v1_s3_all_bw/vit_two_losses_com_L2_norm_100_all_tune_bw_gt_ng_1_forimage/stage_3.pth.tar')
+```
+We will get ```stage_3.pth.tar```.
+
 ## Test
 
 
