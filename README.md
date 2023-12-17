@@ -90,7 +90,9 @@ torch.save(mod['state_dict'], 'logs/train_v1_s3_all_bw/vit_two_losses_com_L2_nor
 We will get ```stage_3.pth.tar```.
 
 ## Test
-Please go to the ``extract_features`` folder, and make directory ``mkdir ./feature/vit_stage3``.
+Please go to the ``extract_features`` folder, and make the directory ``mkdir ./feature/vit_stage3``.
+You can use the trained model ```stage_3.pth.tar```, or directly download it from [here](https://drive.google.com/file/d/1_CL28ZVvNOxOhUA3eJMLqw4shj6KvmXj/view?usp=sharing).
+
 1. Extract reference feature:
 ```
 CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
