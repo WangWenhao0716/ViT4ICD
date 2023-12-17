@@ -97,7 +97,7 @@ CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
       --model vit_base  --GeM_p 3 --bw \
       --checkpoint stage_3.pth.tar --imsize 224
 ```
-2. Extract training feature:
+2. Extract training features:
 ```
 CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
       --image_dir /path/to/training_images/ \
@@ -105,7 +105,7 @@ CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
       --model vit_base  --GeM_p 3 --bw \
       --checkpoint stage_3.pth.tar --imsize 224 
 ```
-3. Extract query features:
+3. Extract query featuress:
 ```
 CUDA_VISIBLE_DEVICES=0 python extract_feature.py \
       --image_dir /path/to/queries/ \
