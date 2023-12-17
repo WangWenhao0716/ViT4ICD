@@ -12,7 +12,7 @@ Please install the packages according to the ``environment.yaml`` file in this d
 ## Datasets
 1. Download the training set (``train_v1_s3_all_bw.tar``) from [Google Drive]().
 
-2. Also download the test set, including the reference set and query set from [official website](https://sites.google.com/view/isc2021/dataset?authuser=0).
+2. Also download all the files from [official website](https://sites.google.com/view/isc2021/dataset?authuser=0).
 
 
 ## Train
