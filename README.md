@@ -3,6 +3,9 @@
 
 ![image](https://github.com/WangWenhao0716/ViT4ICD/blob/main/demo.png)
 
+The proposed method performs better than all the winning solutions in the ISC21 descriptor track.
+![image](https://github.com/WangWenhao0716/ViT4ICD/blob/main/compare.png)
+
 TL;DR: This paper develops a method for training Vision Transformer (ViT) for Image Copy Detection (ICD), and discusses its application in Consumer Electronics/Technologies.
 
 ## Environment
