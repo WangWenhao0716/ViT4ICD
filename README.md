@@ -10,7 +10,7 @@ TL;DR: This paper develops a method for training Vision Transformer (ViT) for Im
 Please install the packages according to the ``environment.yaml`` file in this directory. The minimum hardware requirement of our ViT4ICD is 4 V100 GPUs.
 
 ## Datasets
-1. Download the training set (``train_v1_s3_all_bw.tar``) from [Google Drive]().
+1. Download the training set (``train_v1_s3_all_bw.tar``) from [Google Drive](https://drive.google.com/file/d/1ztrvXFea8jHMRtNvpo22zdJ8sQB8iDGT/view?usp=sharing).
 
 2. Also download all the files from [official website](https://sites.google.com/view/isc2021/dataset?authuser=0).
 
