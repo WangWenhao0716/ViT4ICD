@@ -3,7 +3,7 @@
 
 ![image](https://github.com/WangWenhao0716/ViT4ICD/blob/main/demo.png)
 
-TL;DR: This paper develops a method for training Vision Transformer (ViT) for Image Copy Detection (ICD).
+TL;DR: This paper develops a method for training Vision Transformer (ViT) for Image Copy Detection (ICD), and discusses its application in Consumer Electronics/Technologies.
 
 ## Environment
 
