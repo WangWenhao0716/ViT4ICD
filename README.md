@@ -19,8 +19,22 @@ Please install the packages according to the ``environment.yaml`` file in this d
 
 1. Please go to ``Stage 1``, and running
 ```
-
+CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos_ema.py \
+-ds train_v1_s3_all_bw -a resnet50_un --margin 0.0 \
+--num-instances 4 -b 128 -j 8 --warmup-step 5 \
+--lr 0.00035 --iters 8000 --epochs 25 \
+--data-dir /path/to/train_v1_s3_all_bw/ \
+--logs-dir logs/train_v1_s3_all_bw/50UN_two_losses_m0.6 \
+--height 256 --width 256
 ```
+
+By running:
+```
+import torch
+mod = torch.load('logs/train_v1_s3_all_bw/50UN_two_losses_m0.6/checkpoint_24_ema.pth.tar',map_location='cpu')
+torch.save(mod['state_dict'], 'logs/train_v1_s3_all_bw/50UN_two_losses_m0.6/stage_1.pth.tar')
+```
+
 2. Please go to ``Stage 23``, and running
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train_single_source_gem_coslr_wb_balance_cos_ema_com_bw_forimage.py \
