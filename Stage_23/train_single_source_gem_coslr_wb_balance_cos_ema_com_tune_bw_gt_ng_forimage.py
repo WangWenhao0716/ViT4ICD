@@ -117,7 +117,7 @@ def main_worker(args):
         get_data(args.dataset_source, args.data_dir, args.height, args.width, \
              args.batch_size, args.workers, args.num_instances, iters)
     
-    ppp = '/raid/VSC/data/training_images_all/'
+    ppp = '/path/to/training_images/'
     print("The support dataset is: ", ppp)
     support_dataset = torchvision.datasets.ImageFolder(ppp, SupportTransform(args.height, args.width))
     
@@ -127,7 +127,7 @@ def main_worker(args):
     )
     support_loader = IterLoader(support_loader, iters)
     
-    ppp_T = '/raid/VSC/data/pull_gt_images/gt_query/'
+    ppp_T = '/path/to/query/'
     print("The support query dataset is: ", ppp_T)
     support_dataset_T = torchvision.datasets.ImageFolder(ppp_T, SupportTransform(args.height, args.width))
     idx_to_class_T = {v: k for k, v in support_dataset_T.class_to_idx.items()}
@@ -137,7 +137,7 @@ def main_worker(args):
     )
     support_loader_T = IterLoader(support_loader_T, iters)
     
-    ppp_O = '/raid/VSC/data/pull_gt_images/gt_ref/'
+    ppp_O = '/path/to/ref/'
     print("The support reference dataset is: ", ppp_O)
     support_dataset_O = torchvision.datasets.ImageFolder(ppp_O, SupportTransform(args.height, args.width))
     idx_to_class_O = {v: k for k, v in support_dataset_O.class_to_idx.items()}
@@ -161,7 +161,7 @@ def main_worker(args):
     )
     model_support.cuda()
     model_support = nn.DataParallel(model_support)
-    path_support = '/tmp/stage_1.pth.tar'
+    path_support = '/path/to/stage_1.pth.tar'
     print("The support path is: ", path_support)
     ckpt_support = torch.load(path_support, map_location='cpu')
     model_support.load_state_dict(ckpt_support)
