@@ -155,7 +155,7 @@ Recall at rank 10: 0.84265
 @inproceedings{
     tan2024vision,
     title={Vision Transformers are Active Learners for Image Copy Detection},
-    author={Tan Zhentao and Wenhao Wang and Caifeng Shan and Jungong Han},
+    author={Tan Zhentao and Wenhao Wang and Caifeng Shan},
     booktitle={In submission},
     year={2024},
 }
