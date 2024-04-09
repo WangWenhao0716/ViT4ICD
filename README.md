@@ -1,5 +1,5 @@
 # ViT4ICD
-[In Submission] The official implementation of "Vision Transformers are Active Learners for Image Copy Detection"
+[Neurocomputing 2024] The official implementation of "Vision Transformers are Active Learners for Image Copy Detection"
 
 ![image](https://github.com/WangWenhao0716/ViT4ICD/blob/main/demo.png)
 
@@ -152,11 +152,13 @@ Recall at rank 10: 0.84265
 
 ## Citation
 ```
-@inproceedings{
-    tan2024vision,
-    title={Vision Transformers are Active Learners for Image Copy Detection},
-    author={Tan Zhentao and Wenhao Wang and Caifeng Shan},
-    booktitle={In submission},
-    year={2024},
+@article{tan2024vision,
+  title={Vision Transformers are Active Learners for Image Copy Detection},
+  author={Tan Zhentao and Wenhao Wang and Caifeng Shan},
+  journal={Neurocomputing},
+  volume={xx},
+  pages={xx},
+  year={2024},
+  publisher={Elsevier}
 }
 ```
