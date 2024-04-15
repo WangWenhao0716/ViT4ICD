@@ -153,12 +153,14 @@ Recall at rank 10: 0.84265
 ## Citation
 ```
 @article{tan2024vision,
-  title={Vision Transformers are Active Learners for Image Copy Detection},
-  author={Tan Zhentao and Wenhao Wang and Caifeng Shan},
-  journal={Neurocomputing},
-  volume={xx},
-  pages={xx},
-  year={2024},
-  publisher={Elsevier}
+title = {Vision transformers are active learners for image copy detection},
+journal = {Neurocomputing},
+volume = {587},
+pages = {127687},
+year = {2024},
+issn = {0925-2312},
+doi = {https://doi.org/10.1016/j.neucom.2024.127687},
+url = {https://www.sciencedirect.com/science/article/pii/S0925231224004582},
+author = {Zhentao Tan and Wenhao Wang and Caifeng Shan},
 }
 ```
