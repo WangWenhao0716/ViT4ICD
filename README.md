@@ -1,5 +1,5 @@
 # ViT4ICD
-[Neurocomputing 2024] The official implementation of "Vision Transformers are Active Learners for Image Copy Detection"
+[Neurocomputing 2024] The official implementation of "[Vision Transformers are Active Learners for Image Copy Detection](https://www.sciencedirect.com/science/article/pii/S0925231224004582)"
 
 ![image](https://github.com/WangWenhao0716/ViT4ICD/blob/main/demo.png)
 
